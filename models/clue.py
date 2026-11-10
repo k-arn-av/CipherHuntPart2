@@ -36,7 +36,12 @@ class ClueModel:
     def is_solved(self):
         return self.__is_solved
 
-    # --- SADIA: check_answer goes here ---
+    def check_answer(self, guess):
+        """Returns True if the guess matches the key, ignoring capitals and extra spaces."""
+        if guess.strip().lower() == self.__key.strip().lower():
+            self.__is_solved = True
+            return True
+        return False
 
 
 # --- SUGAM: ClueBank goes here ---
